@@ -129,5 +129,4 @@ chmod +x src_c/*
 
 # Authors
 
-Rayane El Kasri
-Zacharie Maucout
+Rayane El Kasri, Zacharie Maucout
