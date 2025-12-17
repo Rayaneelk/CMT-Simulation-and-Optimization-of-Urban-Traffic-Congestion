@@ -1,0 +1,2 @@
+mean_travel_time_s,p95_travel_time_s,throughput_veh_per_s,avg_queue_veh,max_queue_veh,spawned,exited,blocked_entries
+106.804514,140.500000,6.775833,7.407650,18.000000,24371,16262,1865

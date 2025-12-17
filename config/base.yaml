@@ -1,0 +1,67 @@
+# ============================================================
+# Urban Traffic Congestion Simulation
+# Base configuration file
+# ============================================================
+
+simulation:
+  time_step: 0.5          # [s] simulation time step
+  duration: 3600          # [s] total simulated time (1 hour)
+  warmup: 1200            # [s] warm-up period discarded from statistics
+  random_seed: 42
+
+# ------------------------------------------------------------
+# Road network configuration
+# ------------------------------------------------------------
+network:
+  grid_size: 6            # 6x6 intersections
+  cell_length: 7.5        # [m] length of one cell
+  link_length_cells: 20   # number of cells between intersections
+  lanes_per_direction: 1
+
+# ------------------------------------------------------------
+# Vehicle dynamics (Cellular Automaton - Nagel-Schreckenberg)
+# ------------------------------------------------------------
+vehicles:
+  # Urban speed limit: 50 km/h = 13.89 m/s
+  # Distance per time step = 13.89 * 0.5 ≈ 6.95 m ≈ 1 cell
+  vmax_cells_per_step: 1  # maximum speed (cells / time step)
+
+  slowdown_probability: 0.2   # random braking probability
+  vehicle_length_cells: 1
+
+# ------------------------------------------------------------
+# Traffic demand
+# ------------------------------------------------------------
+demand:
+  arrival_rate: 0.25      # [veh/s] per entry boundary
+  routing:
+    type: manhattan
+    randomness: 0.1       # probability of random tie-breaking
+
+# ------------------------------------------------------------
+# Traffic light configuration
+# ------------------------------------------------------------
+traffic_lights:
+  controller: fixed       # fixed | actuated | max_pressure
+
+  fixed:
+    cycle_time: 60        # [s] total cycle duration
+    green_ns: 30          # [s] green time for North-South
+    green_ew: 30          # [s] green time for East-West
+
+  actuated:
+    min_green: 10         # [s]
+    max_green: 40         # [s]
+    queue_threshold: 5    # [vehicles]
+
+  max_pressure:
+    min_green: 5          # [s]
+    max_green: 45         # [s]
+
+# ------------------------------------------------------------
+# Output configuration
+# ------------------------------------------------------------
+output:
+  export_interval: 1.0    # [s] statistics sampling interval
+  save_queue_snapshots: true
+  save_vehicle_trajectories: false
