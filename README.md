@@ -75,7 +75,7 @@ No manual compilation steps are required beyond this command.
 All results presented in the report (tables and figures) are generated automatically using a single command.
 
 From the root of the repository, run:
-python -m src_py.pipeline.run_all --config config/base.yaml
+python3 -m src_py.pipeline.run_all --config config/base.yaml
 
 This command performs the following steps:
 
@@ -88,10 +88,7 @@ This command performs the following steps:
 
 After successful execution, the following directories are created automatically:
 
-out/
-├── figures/       # Generated plots (PNG)
-└── summary.csv    # Aggregated performance metrics
-
+figures/  summary.csv
 
 These outputs are not version-controlled and should not be committed to GitHub.
 
