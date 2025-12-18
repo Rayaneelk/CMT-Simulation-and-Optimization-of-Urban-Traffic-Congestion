@@ -19,6 +19,8 @@ The project has been tested on EPFL SIE Ubuntu Linux VDI with the following envi
 
 Operating system: Ubuntu 20.04 / 22.04 (EPFL SIE standard image)
 
+You must use python3 and not python !
+
 # Required system packages
 
 Install the following packages if not already available:
