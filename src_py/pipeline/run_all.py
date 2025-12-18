@@ -16,7 +16,7 @@ def main():
     ap.add_argument("--results", default="results")
     ap.add_argument("--figures", default="report_figures")
     ap.add_argument("--tables", default="report_tables")
-    ap.add_argument("--sim_bin", default="src_c/bin/traffic_sim.exe")
+    ap.add_argument("--sim_bin", default="src_c/bin/traffic_sim")
     args = ap.parse_args()
 
     # --------------------------------------------------
